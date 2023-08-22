@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CoronaView.swift
 //  CombineStudy
 //
 //  Created by YoonDaesung on 2023/08/22.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CoronaView: View {
     
-    let viewMdoel = ContentViewModel()
+    let viewMdoel = CoronaViewModel()
     
     var body: some View {
         VStack {
@@ -25,6 +25,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CoronaView()
     }
 }

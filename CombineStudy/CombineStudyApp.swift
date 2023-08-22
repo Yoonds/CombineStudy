@@ -11,7 +11,7 @@ import SwiftUI
 struct CombineStudyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoronaView()
         }
     }
 }

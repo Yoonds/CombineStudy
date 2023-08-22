@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  CoronaViewModel.swift
 //  CombineStudy
 //
 //  Created by YoonDaesung on 2023/08/22.
@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-class ContentViewModel {
+class CoronaViewModel {
     
     private let scheduler: DispatchQueue = DispatchQueue(label: "scheduler")
     private var disposables = Set<AnyCancellable>()
@@ -26,7 +26,7 @@ class ContentViewModel {
  
 }
 
-extension ContentViewModel {
+extension CoronaViewModel {
     
     private func fetchCoronaData(city: String) {
         
