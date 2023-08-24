@@ -1,5 +1,5 @@
 //
-//  CoronaData.swift
+//  CoronaDataResponse.swift
 //  CombineStudy
 //
 //  Created by YoonDaesung on 2023/08/22.

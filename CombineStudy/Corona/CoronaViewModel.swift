@@ -10,11 +10,12 @@ import SwiftUI
 
 class CoronaViewModel {
     
+    private let service = CoronaService()
     private let scheduler: DispatchQueue = DispatchQueue(label: "scheduler")
     private var disposables = Set<AnyCancellable>()
     
     @Published var city: String = ""
-    @Published var coronaData = []
+    @Published var coronaData: [CoronaDataResponse] = []
     
     init() {
         $city
