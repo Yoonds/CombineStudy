@@ -12,6 +12,8 @@
 		6B86092B2A949C5500FD2836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B86092A2A949C5500FD2836 /* Assets.xcassets */; };
 		6B86092E2A949C5500FD2836 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B86092D2A949C5500FD2836 /* Preview Assets.xcassets */; };
 		6B8609352A949D9900FD2836 /* CoronaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8609342A949D9900FD2836 /* CoronaViewModel.swift */; };
+		6B8609392A94A65700FD2836 /* CoronaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8609382A94A65700FD2836 /* CoronaService.swift */; };
+		6B86093B2A94A68800FD2836 /* CoronaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B86093A2A94A68800FD2836 /* CoronaData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		6B86092A2A949C5500FD2836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B86092D2A949C5500FD2836 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B8609342A949D9900FD2836 /* CoronaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaViewModel.swift; sourceTree = "<group>"; };
+		6B8609382A94A65700FD2836 /* CoronaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaService.swift; sourceTree = "<group>"; };
+		6B86093A2A94A68800FD2836 /* CoronaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			children = (
 				6B8609282A949C5400FD2836 /* CoronaView.swift */,
 				6B8609342A949D9900FD2836 /* CoronaViewModel.swift */,
+				6B8609382A94A65700FD2836 /* CoronaService.swift */,
+				6B86093A2A94A68800FD2836 /* CoronaData.swift */,
 			);
 			path = Corona;
 			sourceTree = "<group>";
@@ -149,8 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8609292A949C5400FD2836 /* CoronaView.swift in Sources */,
+				6B8609392A94A65700FD2836 /* CoronaService.swift in Sources */,
 				6B8609272A949C5400FD2836 /* CombineStudyApp.swift in Sources */,
 				6B8609352A949D9900FD2836 /* CoronaViewModel.swift in Sources */,
+				6B86093B2A94A68800FD2836 /* CoronaData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
