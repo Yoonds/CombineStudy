@@ -11,7 +11,10 @@ import SwiftUI
 struct CombineStudyApp: App {
     var body: some Scene {
         WindowGroup {
-            CoronaView()
+            // 서비스, 뷰모델 주입
+            let service = CoronaService()
+            let viewModel = CoronaViewModel(coronaFetchable: service)
+            CoronaView(viewMdoel: viewModel)
         }
     }
 }

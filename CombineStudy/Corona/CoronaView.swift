@@ -9,10 +9,11 @@ import SwiftUI
 
 struct CoronaView: View {
     
-    let viewMdoel = CoronaViewModel()
+    @ObservedObject var viewMdoel: CoronaViewModel
     
     var body: some View {
         VStack {
+            seachTextField
             Button(
                 "검색",
                 action: {
@@ -21,10 +22,15 @@ struct CoronaView: View {
         }
         .padding()
     }
+    
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        CoronaView()
+extension CoronaView {
+    
+    var seachTextField: some View {
+        HStack(alignment: .center) {
+            TextField("지역 입력", text: $viewMdoel.city)
+        }
     }
+    
 }

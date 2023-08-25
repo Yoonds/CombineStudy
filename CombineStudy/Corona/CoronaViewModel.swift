@@ -8,20 +8,52 @@
 import Combine
 import SwiftUI
 
-class CoronaViewModel {
+class CoronaViewModel: ObservableObject{
     
     private let service = CoronaService()
     private let scheduler: DispatchQueue = DispatchQueue(label: "scheduler")
     private var disposables = Set<AnyCancellable>()
+    private let coronaFetchable: CoronaFetchable
     
     @Published var city: String = ""
-    @Published var coronaData: [CoronaDataResponse] = []
+    @Published var dataSource: [CoronaRowViewModel] = []
     
-    init() {
+    init(
+        coronaFetchable: CoronaFetchable,
+        scheduler: DispatchQueue = DispatchQueue(label: "coronaViewModel")
+    ) {
+        self.coronaFetchable = coronaFetchable
+        
         $city
-            .dropFirst(1)
+            .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: scheduler)
-            .sink(receiveValue: fetchCoronaData(city:))
+            .sink(receiveValue: fetchCorona(city:))
+            .store(in: &disposables)
+    }
+    
+    func fetchCorona(city: String) { // FIXME: 불필요 파라미터 제거
+        coronaFetchable.coronaFetch()
+            .map { response in
+                response.city.map(CoronaRowViewModel.init)
+            }
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { [weak self] result in
+                    guard let weakSelf = self else { return }
+                    switch result {
+                        case .failure:
+                            debugPrint("receive failure")
+                            weakSelf.dataSource.removeAll()
+                        case .finished:
+                            break
+                    }
+                },
+                receiveValue: { [weak self] coronaData in
+                    guard let weakSelf = self else { return }
+                    debugPrint("수신 데이터: \(coronaData)")
+                    weakSelf.dataSource = coronaData
+                }
+            )
             .store(in: &disposables)
     }
  

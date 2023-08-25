@@ -27,14 +27,15 @@ struct CoronaDataResponse: Codable {
     }
     
     struct cityData: Codable {
+        let countryName: String
         let totalCount: Int
         let deathCount: Int
         
         enum CodingKeys: String, CodingKey {
+            case countryName = "countryNm"
             case totalCount = "totalCnt"
             case deathCount = "deathCnt"
         }
     }
-    
     
 }
